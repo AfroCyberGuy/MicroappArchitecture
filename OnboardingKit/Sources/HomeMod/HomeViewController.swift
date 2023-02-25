@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NavigationMod
 
 public class HomeViewController: UIViewController {
     

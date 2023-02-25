@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NavigationMod
 
 public class LoginViewController: UIViewController {
     
@@ -31,7 +32,11 @@ public class LoginViewController: UIViewController {
         
         configureLoginTextField()
         configurePasswordTextField()
-        configureLoginButton()
+        if #available(iOS 15.0, *) {
+            configureLoginButton()
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     private func configureLoginTextField() {
@@ -72,6 +77,7 @@ public class LoginViewController: UIViewController {
         ])
     }
     
+    @available(iOS 15.0, *)
     private func configureLoginButton() {
         view.addSubview(loginButton)
         loginButton.translatesAutoresizingMaskIntoConstraints = false
